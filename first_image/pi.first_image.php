@@ -28,7 +28,7 @@ $plugin_info = array(
 	'pi_name'		=> 'First Image',
 	'pi_version'	=> '1.0',
 	'pi_author'		=> 'Cole Henley',
-	'pi_author_url'	=> 'http://cole007.net/',
+	'pi_author_url'	=> 'https://github.com/cole007',
 	'pi_description'=> 'Pulls the first <img> element from a string',
 	'pi_usage'		=> First_image::usage()
 );
