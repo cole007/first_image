@@ -44,9 +44,17 @@ class First_image {
 	public function __construct()
 	{
 		$this->EE =& get_instance();
+		$parameter = $this->EE->TMPL->fetch_param('show');
+		
 		preg_match_all('#(\<\s*img [^\>]*\>)#im', $this->EE->TMPL->tagdata, $image, PREG_SET_ORDER);
 		// $this->return_data = count($image);
-		if (count($image) > 0) $this->return_data = $image[0][0];
+		
+		if ($parameter == 'src') {
+			if (count($image) > 0) preg_match('/< *img[^>]*src *= *["\']?([^"\']*)/i', $image[0][0], $matches);
+			if (isset($matches) && count($matches) > 0) $this->return_data = $matches[1];
+		} else {
+			if (count($image) > 0) $this->return_data = $image[0][0];
+		}
 	}
 	
 	// ----------------------------------------------------------------
