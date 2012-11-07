@@ -70,6 +70,11 @@ class First_image {
 The First image tag pair will return the first <img> element from the contributed text source.
 
 	Sample use: {exp:first_image}{blog_entry}{/exp:first_image} 
+	
+	To return just the value of the src attribute use the show parameter, as follows:
+	
+	{exp:first_image show="src"}{blog_entry}{/exp:first_image} 
+	
 <?php
 		$buffer = ob_get_contents();
 		ob_end_clean();
